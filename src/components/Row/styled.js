@@ -170,12 +170,17 @@ export const Lancamento = styled.div`
     padding: 15px;
     font-size: 16px;
 `;
-export const Eventos = styled.div`
+export const InfoAdicion = styled.div`
     h2{
        font-size: 18px; 
     }
     p{
         margin: 10px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
     padding: 0 15px;
     overflow-x: hidden;

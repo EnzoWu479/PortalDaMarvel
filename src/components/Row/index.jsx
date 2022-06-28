@@ -13,7 +13,7 @@ import {
     XIcon,
     Criticas,
     Lancamento,
-    Eventos
+    InfoAdicion
 } from "./styled";
 import Estrelas from "../Estrelas";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -80,13 +80,40 @@ const Row = ({items, type, character}) => {
                                             </Criticas>
                                         }
                                         {
-                                            onSpot === key && type === "Marvel" &&
-                                            <Eventos>
+                                            onSpot === key && type === "Marvel" && item.events.items.length > 0 &&
+                                            <InfoAdicion>
                                                 <h2>Eventos:</h2>
-                                                {item.events.items.length > 0 && item.events.items.map((item, i)=>(
+                                                {item.events.items.map((item, i)=>(
                                                     i < 5 && <p>{item.name}</p>
                                                 ))}
-                                            </Eventos>
+                                            </InfoAdicion>
+                                        }
+                                        {
+                                            onSpot === key && type === "Marvel" && item.characters &&
+                                            <InfoAdicion>
+                                                <h2>Personagens: </h2>
+                                                {item.characters.items.map((item, i) =>(
+                                                    i < 5 && <p>{item.name}</p>
+                                                ))}
+                                            </InfoAdicion>
+                                        }
+                                        {
+                                            onSpot === key && type === "Marvel" && item.creators &&
+                                            <InfoAdicion>
+                                                <h2>Criadores: </h2>
+                                                {item.creators.items.map((item, i) =>(
+                                                    i < 5 && <p>{item.name}</p>
+                                                ))}
+                                            </InfoAdicion>
+                                        }
+                                        {
+                                            onSpot === key && type === "Marvel" && item.comics &&
+                                            <InfoAdicion>
+                                                <h2>Hqs: </h2>
+                                                {item.comics.items.map((item, i) =>(
+                                                    i < 5 && <p>{item.name}</p>
+                                                ))}
+                                            </InfoAdicion>
                                         }
                                         {
                                             onSpot === key && type!== "Marvel" && item.release_date &&

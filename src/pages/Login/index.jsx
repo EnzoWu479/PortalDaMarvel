@@ -1,29 +1,56 @@
-import { Body, Form } from "./styled";
-import React from "react";
+import React, {useState, useContext} from "react";
 import {Navigate} from "react-router";
-import { useState } from "react";
-import { Movimenta } from "./styled";
+import { AuthContext } from "../../contexts/auth";
+
+import { Movimenta, Body, Form } from "./styled";
 import Logo from "../../components/Logo";
-function Login({logged}){
+function Login(){
+    const {authenticated, login} = useContext(AuthContext);
+
     const [time, setTime] = useState(false);
     setTimeout(()=>(setTime(true)), 1000);
-    const entrar = () => {
-        logged(document.getElementById("usuario").value)
-    }
+
+    const [usuario, setUsuario] = useState("");
+    const [senha, setSenha] = useState("");
+    const [salvar, setSalvar] = useState(true);
+
+    const userSubmit = (event) => {
+        event.preventDefault();
+        login(usuario, senha, salvar);
+    };
     return(
-        logged ? <Navigate replace to="/"/> :
         <Body>
             <Movimenta time={time}>
                 <Logo Size={80}/>
             </Movimenta>
-            <Form opacity={time} onSubmit={entrar}>
+            <Form opacity={time} onSubmit={userSubmit}>
                 <h1>Bem-vindo(a) de volta!</h1>
                 <p>Acesse sua conta:</p>
-                <input required placeholder="Usuário" id="usuario"/>
-                <input required placeholder="Senha" id="senha"/>
+                <input 
+                required 
+                placeholder="Usuário" 
+                id="usuario"
+                name="user"
+                type="text"
+                value={usuario}
+                onChange={(e)=> setUsuario(e.target.value)}
+                />
+                <input 
+                required 
+                placeholder="Senha" 
+                id="senha"
+                type="password"
+                value={senha}
+                onChange={(e) => setSenha(e.target.value)}
+                />
                 <div>
                     <div>
-                        <input type={"checkbox"} id="save"/>
+                        <input 
+                        type={"checkbox"}
+                        id="save"
+                        checked={salvar}
+                        onChange={() => (setSalvar(!salvar))}
+                        />
                         <label htmlFor="save">Salvar login</label>
                     </div>
                     <a href="/esquecisenha">Esqueci a senha</a>
