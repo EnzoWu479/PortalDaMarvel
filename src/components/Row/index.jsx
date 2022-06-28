@@ -23,7 +23,7 @@ const Row = ({items, type, character}) => {
     const [scrollX, setScrollX] = useState(0);
     const [onSpot, setOnSpot] = useState(null);
 
-    const borda = () => ((window.innerWidth - ((window.innerWidth * 0.28) * 3 + 20 * 2))/2);
+    const borda = () => ((window.innerWidth - (window.innerWidth * 0.84) - 20 * (window.innerWidth < 760 ? 0 : window.innerWidth > 1000 ? 2 : 1))/2);
     
     const handleLeftArrow = () => {
         let x = scrollX + window.innerWidth - borda();
@@ -34,7 +34,7 @@ const Row = ({items, type, character}) => {
     }
     const handleRightArrow = () => {
         let x = scrollX - window.innerWidth + borda();
-        let widthMax = (items.length/3).toFixed(0) * ((window.innerWidth*0.28*3) + 40 + borda());
+        let widthMax = (items.length/3).toFixed(0) * ((window.innerWidth*0.84) + 40 + borda());
         if((window.innerWidth - widthMax) > x){
             x = (window.innerWidth - widthMax) - 60;
         };
@@ -57,12 +57,12 @@ const Row = ({items, type, character}) => {
                 }}>
                     {
                         items.length > 0 && items.map((item, key) => (
-                            <Container key={key} opened={onSpot === key} first = {(key+1)%3 === 1}>
+                            <Container key={key} opened={onSpot === key}>
                                 <Item opened={onSpot === key} style={{
                                     backgroundImage: `url(${type === "Marvel" ? item.thumbnail.path : ("https://image.tmdb.org/t/p/w400" + item.poster_path)}${type === "Marvel" ? "." + item.thumbnail.extension : ""})`
                                 }}>
                                 </Item>
-                                <Box opened={onSpot === key} left={(key+1)%3 === 0}>
+                                <Box opened={onSpot === key} className="Caixa">
                                     <Infos opened={onSpot === key}>
                                         <h1>
                                             {character ? item.name : (item.title ? item.title : item.name)}
@@ -133,7 +133,7 @@ const Row = ({items, type, character}) => {
                                 </Box>
                                 {
                                     onSpot === key &&
-                                    <XIcon onClick={() => (setOnSpot(null))} left={(key+1)%3 === 0}>
+                                    <XIcon onClick={() => (setOnSpot(null))} className="XIcon">
                                         <FontAwesomeIcon icon={faCircleXmark} type={"regular"}/>
                                     </XIcon>
                                 }

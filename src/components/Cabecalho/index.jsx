@@ -6,7 +6,8 @@ import {
     Nav, 
     Direita, 
     Opcoes,
-    Perfil
+    Perfil,
+    LogoArea
 } from "./styled"
 
 function Cabecalho({selecionado}){
@@ -14,7 +15,10 @@ function Cabecalho({selecionado}){
     const navigate = useNavigate();
     return(
         <Nav>
-            <Logo Size={35}/>
+            <LogoArea>
+                <Logo Size={35}/>
+            </LogoArea>
+            
             <Direita>
                 <Opcoes 
                 selecionado={selecionado === 1} onClick={()=>(navigate("/"))}>

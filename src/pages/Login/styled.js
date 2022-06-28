@@ -6,6 +6,9 @@ export const Movimenta = styled.div`
             transform: scale(0.8);
             right: 25%;
             bottom: 30%;
+            @media(max-width: 760px){
+                right: 0;
+            }
         ` : `
             right: 0;
             bottom: 0;
@@ -55,7 +58,6 @@ export const Form = styled.form`
         a{
             color: red;
             text-decoration: none;
-
         }
     }
     input{
@@ -97,7 +99,6 @@ export const Form = styled.form`
             }
         }
         a{
-            
             color: #505055;
             text-decoration: none;
             border-bottom: 1px solid red;
@@ -105,5 +106,18 @@ export const Form = styled.form`
             height: 20px;
             margin-right: 10px;
         }
+    }
+    @media (max-width: 760px) {
+        left: calc(50% - 110px);
+        background-color: #000c;
+        border-radius: 20px;
+        h1{
+            font-size: 20px;
+            text-align: center;
+        }
+        p{
+            text-align: center;
+        }
+        
     }
 `;

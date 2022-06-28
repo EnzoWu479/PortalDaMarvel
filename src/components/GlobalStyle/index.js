@@ -12,6 +12,9 @@ export const GlobalStyle = createGlobalStyle`
         margin: 0;
         font-weight: 700;
         font-family: sans-serif;
+        @media (max-width: 760px){
+            background-size: cover;
+        }
     }
     footer{
         margin: 20px 0;
@@ -22,6 +25,7 @@ export const Body = styled.div`
     height: 100vh;
     width: 100vw;
     background: linear-gradient(to left, #242424de,transparent);
+    
 `;
 export const Center = styled.div`
     display: flex;
