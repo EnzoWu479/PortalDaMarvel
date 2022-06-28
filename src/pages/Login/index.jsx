@@ -1,11 +1,10 @@
 import React, {useState, useContext} from "react";
-import {Navigate} from "react-router";
 import { AuthContext } from "../../contexts/auth";
 
 import { Movimenta, Body, Form } from "./styled";
 import Logo from "../../components/Logo";
 function Login(){
-    const {authenticated, login} = useContext(AuthContext);
+    const {login} = useContext(AuthContext);
 
     const [time, setTime] = useState(false);
     setTimeout(()=>(setTime(true)), 1000);

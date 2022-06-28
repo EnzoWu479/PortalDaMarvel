@@ -12,6 +12,7 @@ function Filmes(){
     const [loaded, setLoaded] = useState(true);
     const [select, setSelect] = useState(null);
     useEffect(()=>{
+        
         const Load = async () =>{
             let movies = await Tmdb.getMoviesInfo();
             setMovieList(movies.items);
