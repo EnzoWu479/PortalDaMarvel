@@ -1,8 +1,5 @@
-const API_BASE = "http://gateway.marvel.com/v1/public/";
-//https://api.themoviedb.org/3/search/company?api_key=[MY_KEY]&query=Marvel&page=1
-
 const basicFetch = async (endpoint) => {
-    const req = await fetch(`${API_BASE}${endpoint}`);
+    const req = await fetch(`${process.env.REACT_APP_MARVEL_BASE}${endpoint}`);
     const json = await req.json();
     return json;
 }
