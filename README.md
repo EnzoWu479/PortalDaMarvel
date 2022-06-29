@@ -3,6 +3,10 @@
 Site sobre os personagens, filmes e Hqs da Marvel feito usando React e as APIs
 <a href="https://developer.marvel.com/" target="_blank">Marvel</a> e
 <a href="https://www.themoviedb.org/" target="_blank">TheMovieDB</a>
+<br/>
+Usuário: adm 
+<br/>
+Senha: password
 ##
 
 <img alt="interface.gif" height="500" src="interface.gif"/>
