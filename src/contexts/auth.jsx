@@ -16,23 +16,21 @@ export const AuthProvider = ({children}) => {
     }, []);
 
     const login = (user, password, saved) =>{
-        console.log("login", {user, password});
-
         const loggedUser = {
             id: "123",
             user
         };
-
-        if(user === "adm" && password==="password"){
+        if(user === process.env.REACT_APP_ACCOUNT && password === process.env.REACT_APP_PASSWORD){
             if(saved){
                 localStorage.setItem("user", JSON.stringify(loggedUser))
             };
             setUser({loggedUser});
             navigate("/");
+        }else{
+            return false;
         };
     };
     const logout = () => {
-        console.log("logout");
         setUser(null);
         localStorage.removeItem("user");
         navigate("/login")

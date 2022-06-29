@@ -5,6 +5,7 @@ import Select from "../../components/Select";
 import Cabecalho from "../../components/Cabecalho";
 import Row from "../../components/Row";
 import Loading from "../../components/Loading";
+import Rodape from "../../components/Rodape";
 
 function Filmes(){
     const [movieList, setMovieList] = useState([]);
@@ -36,6 +37,7 @@ function Filmes(){
             {loaded &&
                 <Loading/>
             }
+            <Rodape/>
         </Body>
     )
 }

@@ -4,8 +4,8 @@ import Cabecalho from "../../components/Cabecalho";
 import { Body, Center } from "../../components/GlobalStyle";
 import Row from "../../components/Row";
 import Loading from "../../components/Loading";
-
-function Home({items}){
+import Rodape from "../../components/Rodape";
+function Home(){
     const [characterList, setCharacterList] = useState([]);
     const [loaded, setLoaded] = useState(true);
     useEffect(()=>{
@@ -31,6 +31,7 @@ function Home({items}){
             {loaded &&
                 <Loading/>
             }
+            <Rodape/>
         </Body>
     )
 }
