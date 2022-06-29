@@ -4,7 +4,7 @@ import { Body, Center } from "../../components/GlobalStyle";
 import Row from "../../components/Row";
 import Marvel from "../../Marvel";
 import Loading from "../../components/Loading";
-
+import Rodape from "../../components/Rodape"
 function Hq(){
     document.title = "Portal Marvel | Hqs"
     const [hqList, setHqList] = useState([]);
