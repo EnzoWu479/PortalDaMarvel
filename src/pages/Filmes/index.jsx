@@ -8,6 +8,7 @@ import Loading from "../../components/Loading";
 import Rodape from "../../components/Rodape";
 
 function Filmes(){
+    document.title = "Portal Marvel | Filmes"
     const [movieList, setMovieList] = useState([]);
     const [movieAZ, setMovieAZ] = useState([]);
     const [loaded, setLoaded] = useState(true);

@@ -35,6 +35,7 @@ function Hq(){
             {loaded &&
                 <Loading/>
             }
+            <Rodape/>
         </Body>
     )
 }
