@@ -6,6 +6,7 @@ import Marvel from "../../Marvel";
 import Loading from "../../components/Loading";
 
 function Hq(){
+    document.title = "Portal Marvel | Hqs"
     const [hqList, setHqList] = useState([]);
     const [loaded, setLoaded] = useState(true);
     useEffect(()=>{

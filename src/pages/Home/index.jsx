@@ -6,8 +6,10 @@ import Row from "../../components/Row";
 import Loading from "../../components/Loading";
 import Rodape from "../../components/Rodape";
 function Home(){
+    document.title = "Portal Marvel | Personagens"
     const [characterList, setCharacterList] = useState([]);
     const [loaded, setLoaded] = useState(true);
+    
     useEffect(()=>{
         const Load = async () =>{
             let characters = await Marvel.getCharacters();

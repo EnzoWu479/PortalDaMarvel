@@ -6,6 +6,7 @@ import Rodape from "../../components/Rodape";
 import FormsLogin from "../../components/FormsLogin";
 
 function Login(){
+    document.title = "Portal Marvel | Login"
     const [time, setTime] = useState(false);
     setTimeout(()=>(setTime(true)), 1000);
     return(
