@@ -1,9 +1,14 @@
 # Portal da Marvel | Desafio Front-End
 ## Descrição
-Site sobre os personagens, filmes e Hqs da Marvel feito usando React e as APIs Marvel e TheMovieDB
+Site sobre os personagens, filmes e Hqs da Marvel feito usando React e as APIs
+<a href="https://developer.marvel.com/" target="_blank">Marvel</a> e
+<a href="https://www.themoviedb.org/" target="_blank">TheMovieDB</a>
 ##
+
 <img alt="interface.gif" height="500" src="interface.gif"/>
+
 ##
+
 <div align="center" style="display: inline_block">
   
   <a href="https://portal-marvel.herokuapp.com" target="_blank">Site Hospedado<a/>
