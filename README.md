@@ -15,7 +15,7 @@ Senha: password
 
 <div align="center" style="display: inline_block">
   
-  <a href="https://portal-marvel.herokuapp.com" target="_blank">Site Hospedado<a/>
+  <a href="https://portal-marvel.herokuapp.com" target="_blank">Site Hospedado na heroku<a/>
   
   <a href="https://github.com/EnzoWu479" target="_blank">GitHub<a/>
   
