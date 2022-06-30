@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router";
 import Logo from "../Logo";
 import { AuthContext } from "../../contexts/auth";
@@ -7,19 +7,23 @@ import {
     Direita, 
     Opcoes,
     Perfil,
-    LogoArea
-} from "./styled"
+    LogoArea,
+    MenuButton
+} from "./styled";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 function Cabecalho({selecionado}){
     const {logout} = useContext(AuthContext);
     const navigate = useNavigate();
+    const [open, setOpen] = useState(false);
     return(
         <Nav>
             <LogoArea>
                 <Logo Size={35}/>
             </LogoArea>
             
-            <Direita>
+            <Direita open={open}>
                 <Opcoes 
                 selecionado={selecionado === 1} onClick={()=>(navigate("/"))}>
                     Personagens
@@ -39,6 +43,9 @@ function Cabecalho({selecionado}){
                     <p onClick={() => (logout())}>Sair</p>
                 </Perfil>
             </Direita>
+            <MenuButton onClick={() => (setOpen(!open))}>
+                <FontAwesomeIcon icon={faBars}/>
+            </MenuButton>
         </Nav>
     )
 }

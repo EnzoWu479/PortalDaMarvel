@@ -23,4 +23,7 @@ export const Footer = styled.footer`
     a:nth-child(3){
         color: cyan;
     }
+    @media(max-width: 760px){
+        font-size: 14px;
+    }
 `;

@@ -19,7 +19,6 @@ export const Container = styled.div`
     display: inline-block;
     width: 28vw;
     height: calc(28vw * 1.5);
-    
 
     transition: all ease 0.2s;
     margin-left: 20px;
@@ -40,7 +39,7 @@ export const Container = styled.div`
         &:nth-child(n) .Caixa{
             ${(props) => (props.opened) && `
                 left: 0;
-                padding-right: 50px;
+                width: 100%;
                 padding-left: 0;
                 z-index: 5;
             `}
@@ -88,6 +87,7 @@ export const Item = styled.div`
     height: 100%;
     background-size: cover;
     border-radius: 20px;
+    background-position: center;
 `;
 export const Box = styled.div`
     ${
@@ -132,14 +132,13 @@ export const Infos = styled.div`
         top: 50px;
         padding: 0 15px;
         box-sizing: border-box;
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 100;
         ${(props) => (props.opened ? `
             ${limitLinhas(12)}
         `:`
             ${limitLinhas(6)}
         `)}
-        
     }
     width: 100%;
     position: relative;
@@ -149,11 +148,13 @@ export const Infos = styled.div`
     border-radius: 30px;
     object-fit: cover;
     @media (max-width: 760px){
+        
         h1{
             font-size: 30px;
         }
         p{
-            font-size: 14px;
+            top: 90px;
+            font-size: 18px;
         }
     }
 `;
