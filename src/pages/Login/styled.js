@@ -4,7 +4,7 @@ export const Movimenta = styled.div`
     ${
         (props) => (props.time ? `
             transform: scale(0.8);
-            right: 25%;
+            right: 28%;
             bottom: 30%;
             @media(max-width: 760px){
                 right: 0;
