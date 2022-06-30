@@ -13,6 +13,17 @@ Senha: password
 
 ##
 
+Responsividade
+
+<img alt="responsividade.gif" height="500" src="resposividade.gif"/>
+
+##
+
+Login
+
+<img alt="login.gif" height="500" src="login.gif"/>
+
+##
 <div align="center" style="display: inline_block">
   
   <a href="https://portal-marvel.herokuapp.com" target="_blank">Site Hospedado na heroku<a/>
