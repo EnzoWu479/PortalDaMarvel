@@ -87,7 +87,7 @@ export const Item = styled.div`
     height: 100%;
     background-size: cover;
     border-radius: 20px;
-    background-position: center;
+    background-position: center top;
 `;
 export const Box = styled.div`
     ${
@@ -154,7 +154,7 @@ export const Infos = styled.div`
         }
         p{
             top: 90px;
-            font-size: 18px;
+            font-size: 16px;
         }
     }
 `;
