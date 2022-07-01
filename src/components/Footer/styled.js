@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const Footer = styled.footer`
+const Foot = styled.footer`
     background-color: #000;
     margin: 0;
     width: 100%;
@@ -27,3 +27,4 @@ export const Footer = styled.footer`
         font-size: 14px;
     }
 `;
+export default Foot;

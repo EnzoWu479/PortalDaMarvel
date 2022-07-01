@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const NothingHere = styled.div`
+const NothingHere = styled.div`
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -12,3 +12,4 @@ export const NothingHere = styled.div`
         margin-right: 10px;
     };
 `;
+export default NothingHere;

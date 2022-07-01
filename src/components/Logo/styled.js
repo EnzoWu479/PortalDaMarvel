@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const Texto = styled.a`
+const Text = styled.a`
     font-family: "Marvel", sans-serif;
     
     font-weight: 100;
@@ -11,3 +11,4 @@ export const Texto = styled.a`
     padding: 2px 2px;
     margin: 0;
 `;
+export default Text;

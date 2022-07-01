@@ -1,60 +1,69 @@
-import React, {useState, useContext} from "react";
-import { Form, Error, Container } from "./styled";
-import { AuthContext } from "../../contexts/auth";
+import React, { useState, useContext } from 'react';
+import propTypes from 'prop-types';
+import { Form, Error, Container } from './styled';
+import { AuthContext } from '../../contexts/auth';
 
-const FormsLogin = ({time}) => {
-    const {login} = useContext(AuthContext);
+function FormsLogin({ time }) {
+  const { login } = useContext(AuthContext);
 
-    const [usuario, setUsuario] = useState("");
-    const [senha, setSenha] = useState("");
-    const [salvar, setSalvar] = useState(true);
-    const [erro, setErro] = useState(false);
+  const [user, setUser] = useState('');
+  const [password, setPassword] = useState('');
+  const [save, setSave] = useState(true);
+  const [error, setError] = useState(false);
 
-    const userSubmit = (event) => {
-        event.preventDefault();
-        if(!login(usuario, senha, salvar)){
-            setErro(true);
-        };
-    };
-    return(
-        <Form onSubmit={userSubmit} opacity={time}>
-                <h1>Bem-vindo(a) de volta!</h1>
-                <p>Acesse sua conta:</p>
-                {erro && 
-                <Error>Usuario ou senha Inválidos!</Error>
-                }
-                <input 
-                required 
-                placeholder="Usuário" 
-                id="usuario"
-                name="user"
-                type="text"
-                value={usuario}
-                onChange={(e)=> setUsuario(e.target.value)}
-                />
-                <input 
-                required 
-                placeholder="Senha" 
-                id="senha"
-                type="password"
-                value={senha}
-                onChange={(e) => setSenha(e.target.value)}
-                />
-                <Container>
-                    <div>
-                        <input 
-                        type={"checkbox"}
-                        id="save"
-                        checked={salvar}
-                        onChange={() => (setSalvar(!salvar))}
-                        />
-                        <label htmlFor="save">Salvar login</label>
-                    </div>
-                    <a href="/esquecisenha">Esqueci a senha</a>
-                </Container>
-                <input type="submit" value="Entrar"/>
-                <p id="cadastro">Ainda não tem login? <a href="/cadastro">Cadastre-se</a></p>
-            </Form>
-    )
+  const userSubmit = (event) => {
+    event.preventDefault();
+    if (!login(user, password, save)) {
+      setError(true);
+    }
+  };
+  return (
+    <Form onSubmit={userSubmit} opacity={time}>
+      <h1>Bem-vindo(a) de volta!</h1>
+      <p>Acesse sua conta:</p>
+      {error
+                && <Error>Usuario ou senha Inválidos!</Error>}
+      <input
+        required
+        placeholder="Usuário"
+        id="user"
+        name="user"
+        type="text"
+        value={user}
+        onChange={(e) => setUser(e.target.value)}
+      />
+      <input
+        required
+        placeholder="Senha"
+        id="password"
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <Container>
+        <div>
+          <label htmlFor="save">
+            <input
+              type="checkbox"
+              id="save"
+              checked={save}
+              onChange={() => (setSave(!save))}
+            />
+            Salvar login
+          </label>
+
+        </div>
+        <a href="/esquecisenha">Esqueci a password</a>
+      </Container>
+      <input type="submit" value="Entrar" />
+      <p id="cadastro">
+        Ainda não tem login?
+        <a href="/cadastro">Cadastre-se</a>
+      </p>
+    </Form>
+  );
 }
+FormsLogin.propTypes = {
+  time: propTypes.bool.isRequired,
+};
 export default FormsLogin;

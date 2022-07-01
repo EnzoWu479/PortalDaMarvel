@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const Selecionar = styled.div`
+export const Container = styled.div`
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -10,7 +10,7 @@ export const Selecionar = styled.div`
 `;
 export const SelectBox = styled.div`
     width: 150px;
-    height: ${(props) => (props.opened ? "120px" : "40px")};
+    height: ${(props) => (props.opened ? '120px' : '40px')};
     border-radius: 10px;
     border: 1px solid red;
     color: red;
@@ -26,7 +26,7 @@ export const SelectBox = styled.div`
     position: absolute;
     z-index: 10;
 `;
-export const Escolhido = styled.div`
+export const Choosen = styled.div`
     height: 40px;
     padding: 10px 15px;
 `;
@@ -44,7 +44,7 @@ export const OptionBox = styled.div`
 
 export const Icon = styled.i`
     position: relative;
-    bottom: ${(props) => (props.opened ? "40px" : "0px")};
+    bottom: ${(props) => (props.opened ? '40px' : '0px')};
     transition: all ease 0.2s;
     left: 125px;
     color: red;

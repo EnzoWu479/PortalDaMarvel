@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Nav = styled.nav`
     display: flex;
@@ -12,7 +12,7 @@ export const Nav = styled.nav`
         z-index: 5;
     }
 `;
-export const Direita = styled.div`
+export const Right = styled.div`
     font-size: 20px;
     display: flex;
     align-items: center;
@@ -28,7 +28,7 @@ export const Direita = styled.div`
             top: calc(10vh + 1px);
             z-index: 15;
             opacity: 1;
-        `:`
+        ` : `
             top: -180px;
             z-index: -1;
             opacity: 0;
@@ -37,11 +37,11 @@ export const Direita = styled.div`
         transition: all ease 0.4s;
     }
 `;
-export const Opcoes = styled.a`
+export const Options = styled.a`
     margin-right: 8vw;
-    color: ${(props)=>( props.selecionado ? "white": "#161616")};
+    color: ${(props) => (props.selecionado ? 'white' : '#161616')};
     text-decoration: none;
-    font-weight: ${(props)=>( props.selecionado ? "bold": "normal")};
+    font-weight: ${(props) => (props.selecionado ? 'bold' : 'normal')};
     cursor: pointer;
     @media(max-width: 760px){
         border-bottom: 1px solid gray;
@@ -64,11 +64,13 @@ export const Perfil = styled.div`
         border-radius: 50%;
         margin-right: 10px;
     }
-    p{
+    button{
+        background-color: transparent;
         margin: 0;
         font-weight: 100;
         cursor: pointer;
         color: #161616;
+        font-size: 18px;
     }
     @media(max-width: 760px){
         height: 45px;

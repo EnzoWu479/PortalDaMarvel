@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Load = styled.section`
   position: fixed;
@@ -12,9 +12,9 @@ export const Load = styled.section`
   justify-content: center;
   align-items: center;
 `;
-export const Pisca = styled.div`
-    animation: pisca 2s infinite;
-  @keyframes pisca{
+export const Blink = styled.div`
+    animation: blink 2s infinite;
+  @keyframes blink{
     0%{
         opacity: 1;
     }

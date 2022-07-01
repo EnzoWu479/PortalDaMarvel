@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const Movimenta = styled.div`
+export const Move = styled.div`
     ${
-        (props) => (props.time ? `
+  (props) => (props.time ? `
             transform: scale(0.8);
             right: 28%;
             bottom: 30%;
@@ -13,7 +13,7 @@ export const Movimenta = styled.div`
             right: 0;
             bottom: 0;
         `)
-    }
+}
     width: 100%;
     height: 100%;
 
